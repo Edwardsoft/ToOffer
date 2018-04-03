@@ -12,7 +12,7 @@ public class HeapSort {
         for(int i = array.length - 1; i >= 0; i --) {
             swap(i, 0);
             checkStatus();
-            heapModify(0,i - 1);
+            heapModify(0,i );
             checkStatus();
         }
     }
@@ -28,7 +28,7 @@ public class HeapSort {
         int right = i * 2 + 2;
         if(left < length && array[left] > array[i] )
             largest = left;
-        if(left < length && array[right] > array[largest] )
+        if(right < length && array[right] > array[largest] )
             largest = right;
         if(largest != i) {
             swap(largest, i);
